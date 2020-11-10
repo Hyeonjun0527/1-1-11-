@@ -1,0 +1,38 @@
+#include <stdio.h>
+int n;
+int get_integer()//get_integer()의 반환값은  n이다. 이 함수자체가 하나의 값 
+{
+	int n;
+	printf("정수를 입력하시오: ");
+	scanf("%d",&n);
+	return n;
+}
+int is_prime(int n)//반환값이 1이면 소수이다. 반환값이 0이면 소수가 아니다. 
+{
+	int i;
+	for(i=2;i<=n-1;i++)
+	{
+		if(n%i==0)
+		return 0;
+	}
+	return 1;
+}
+
+int num_repeat(int m)
+{
+	int k;
+	k=get_integer();
+	for(n=2;n<=k;n++)//n을 3부터 10까지 반복한다. 
+	{
+		m=is_prime(n);
+		if(m==1){
+		printf("%d\n",n);
+	}
+	}
+}
+int main()
+{
+	int m;
+	m=is_prime(n);
+	num_repeat(m);
+}
